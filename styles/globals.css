@@ -63,33 +63,17 @@ a {
   background-blend-mode: overlay;
 }
 
-.coin2::before {
-  content: "";
-  display: block;
-  position: relative;
-  height: var(--coin-size);
-  width: var(--coin-size);
-  border-radius: 50%;
-  background-color: var(--face);
-  animation: spin 0.2s linear infinite;
-  background-image: var(--coin-face);
-  background-size: 100% 100%;
-  background-position: center;
-  background-blend-mode: overlay;
-}
-
 .coin.flip::before {
   animation-name: flip;
-}
-
-.coin.copper::before {
-  filter: hue-rotate(-40deg) brightness(0.75) contrast(115%);
-  animation-delay: -0.25s;
 }
 
 .coin.silver::before {
   filter: saturate(0);
   animation-delay: -0.5s;
+}
+
+.coin.silver.animate::before {
+  animation: spin 0.2s linear infinite;
 }
 
 /* animation definitions */
