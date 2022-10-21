@@ -106,7 +106,6 @@ const Home: NextPage = () => {
         }}
       >
         <div className="modal">
-          <img src={warningIcon} />
           <h1 style={{ color: "red" }}>WARNING!</h1>
           <h2 style={{ color: "red" }}>YOUR COMPTER MAY BE INFECTED:</h2>
           <p>
