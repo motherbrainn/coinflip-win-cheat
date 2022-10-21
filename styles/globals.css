@@ -7,9 +7,33 @@ body {
   background-image: url("../assets/bliss.png");
 }
 
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.banner {
+  width: 600px;
+  height: 50px;
+  background-color: red;
+  animation: blink 3s infinite;
+  text-align: center;
 }
 
 * {
