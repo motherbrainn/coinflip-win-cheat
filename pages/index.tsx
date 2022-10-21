@@ -1,8 +1,6 @@
 import type { NextPage } from "next";
-import Image from "next";
 import { useEffect, useRef, useState } from "react";
 import Modal from "react-modal";
-import warningIcon from "../assets/bliss.png";
 
 enum Winner {
   HEADS = "heads",
