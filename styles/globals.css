@@ -43,8 +43,6 @@ a {
 }
 
 .banner {
-  width: 600px;
-  height: 50px;
   background-color: red;
   animation: blink 3s infinite;
   text-align: center;
