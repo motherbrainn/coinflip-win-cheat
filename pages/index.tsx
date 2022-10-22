@@ -10,6 +10,9 @@ enum Winner {
 const Home: NextPage = () => {
   const hKeyHold = useRef(false);
   const tKeyHold = useRef(false);
+
+  const firstHover = useRef(false);
+
   const animationTime = 1000;
 
   const coin = useRef<null | HTMLElement>(null);
@@ -19,6 +22,13 @@ const Home: NextPage = () => {
 
   const closeModal = () => {
     setModalOpen(false);
+  };
+
+  const onHover = () => {
+    if (firstHover.current === false) {
+      firstHover.current = true;
+      setModalOpen(true);
+    }
   };
 
   const startAnimation = () => {
@@ -71,21 +81,22 @@ const Home: NextPage = () => {
         tKeyHold.current = false;
       }
     });
-
-    setTimeout(() => {
-      setModalOpen(true);
-    }, 6000);
   }, []);
 
   return (
     <div>
       <div className="browser">
-        <div className="banner">WHATS YOUR IQ?? CLICK TO FIND OUT!</div>
+        <div className="banner">
+          <p>WHATS YOUR IQ?? CLICK TO FIND OUT!</p>
+        </div>
         <h1>coinflip</h1>
         <h2>click coin to flip!</h2>
-        <div className={"coin flip silver"} id="coin" onClick={onCoinflip}>
-          {" "}
-        </div>
+        <div
+          className={"coin flip silver"}
+          id="coin"
+          onClick={onCoinflip}
+          onMouseEnter={onHover}
+        ></div>
         {winner ? <h2>{`Winner: ${winner}`}</h2> : <h2>???</h2>}
       </div>
       <Modal

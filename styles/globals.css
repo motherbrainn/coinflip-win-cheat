@@ -36,6 +36,15 @@ a {
   text-align: center;
 }
 
+.banner p {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
 * {
   box-sizing: border-box;
 }
