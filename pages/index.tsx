@@ -103,6 +103,7 @@ const Home: NextPage = () => {
         isOpen={modalOpen}
         onRequestClose={closeModal}
         contentLabel="Example Modal"
+        ariaHideApp={false}
         style={{
           content: {
             top: "50%",
