@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import { useEffect, useRef, useState } from "react";
 import Modal from "react-modal";
+import test from "../assets/warning-icon.png";
+import Image from "next/image";
 
 enum Winner {
   HEADS = "heads",
@@ -116,7 +118,14 @@ const Home: NextPage = () => {
         }}
       >
         <div className="modal">
-          <h1 style={{ color: "red" }}>WARNING!</h1>
+          <div className="spamHeader">
+            <span>
+              <Image alt={"test"} src={test} width={"100px"} height={"100px"} />
+            </span>
+            <span>
+              <h1 style={{ color: "red" }}>WARNING!</h1>
+            </span>
+          </div>
           <h2 style={{ color: "red" }}>YOUR COMPTER MAY BE INFECTED:</h2>
           <p>
             `System Detected <strong style={{ color: "red" }}>(2)</strong>{" "}
