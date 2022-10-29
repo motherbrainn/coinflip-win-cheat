@@ -21,6 +21,7 @@ const Home: NextPage = () => {
 
   const [winner, setWinner] = useState<null | string>(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const [rootkitModalOpen, setRootkitModalOpen] = useState(false);
 
   const closeModal = () => {
     setModalOpen(false);
@@ -83,6 +84,10 @@ const Home: NextPage = () => {
         tKeyHold.current = false;
       }
     });
+
+    document.addEventListener("mouseleave", () => {
+      setRootkitModalOpen(true);
+    });
   }, []);
 
   return (
@@ -101,6 +106,24 @@ const Home: NextPage = () => {
         ></div>
         {winner ? <h2>{`Winner: ${winner}`}</h2> : <h2>???</h2>}
       </div>
+      <Modal
+        isOpen={rootkitModalOpen}
+        style={{
+          content: {
+            top: "50%",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            marginRight: "-50%",
+            transform: "translate(-50%, -50%)",
+            zIndex: "1",
+          },
+        }}
+        ariaHideApp={false}
+      >
+        <h2 style={{ color: "red" }}>ROOTKIT.i32 INSTALLED</h2>
+        <button onClick={() => setRootkitModalOpen(false)}>OK</button>
+      </Modal>
       <Modal
         isOpen={modalOpen}
         onRequestClose={closeModal}
